@@ -54,11 +54,16 @@ Widget productsList(products) {
           title: Text('List of Products'),
         ),
         itemBuilder: (context, index) {
-          return ListTile(
-            leading: products[index].image,
-            title: Text(products[index].name),
-            subtitle: Text(products[index].describe),
+          return Card(
+            child: ListTile(
+              leading: products[index].image,
+              title: Text(products[index].name),
+              subtitle: Text(products[index].describe),
+              trailing: const Icon(Icons.more_vert),
+              isThreeLine: true,
+            ),
           );
         }),
   );
 }
+
