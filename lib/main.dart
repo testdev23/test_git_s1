@@ -55,6 +55,7 @@ Widget productsList(products) {
         ),
         itemBuilder: (context, index) {
           return ListTile(
+            leading: products[index].image,
             title: Text(products[index].name),
             subtitle: Text(products[index].describe),
           );
