@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'data/products_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,36 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ProductPage(),
+    );
+  }
+}
+
+class ProductPage extends StatelessWidget {
+  const ProductPage({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: const Text('List of products'),
+      ),
+      body: Center(
+        child: ListView.builder(
+            itemCount: products.length,
+            prototypeItem: const ListTile(
+              title: Text('List of Products'),
+            ),
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(products[index].name),
+                subtitle: Text(products[index].describe),
+              );
+            }),
+      ),
     );
   }
 }

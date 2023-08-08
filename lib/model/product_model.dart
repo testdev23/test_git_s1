@@ -6,4 +6,11 @@ class Product {
   Image? image;
   String describe = '';
   String shortDescribe = '';
+
+ Product(
+     this.name,
+     this.image,
+     this.shortDescribe,
+     this.describe,
+     );
 }
