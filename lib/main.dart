@@ -37,26 +37,27 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: const Text('List of products'),
-      ),
-      body: Center(
-        child: ListView.builder(
-            itemCount: products.length,
-            prototypeItem: const ListTile(
-              title: Text('List of Products'),
-            ),
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(products[index].name),
-                subtitle: Text(products[index].describe),
-              );
-            }),
-      ),
-    );
+        appBar: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: const Text('List of products'),
+        ),
+        body: productsList(products));
   }
 }
 
-
+Widget productsList(products) {
+  return Center(
+    child: ListView.builder(
+        itemCount: products.length,
+        prototypeItem: const ListTile(
+          title: Text('List of Products'),
+        ),
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(products[index].name),
+            subtitle: Text(products[index].describe),
+          );
+        }),
+  );
+}
