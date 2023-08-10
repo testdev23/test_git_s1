@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'data/products_data.dart';
+import '/page/widget/product_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ProductPage(),
+      home: const ProductPage(),
     );
   }
 }
@@ -37,6 +39,7 @@ class ProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
           // the App.build method, and use it to set our appbar title.
@@ -54,16 +57,7 @@ Widget productsList(products) {
           title: Text('List of Products'),
         ),
         itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              leading: products[index].image,
-              title: Text(products[index].name),
-              subtitle: Text(products[index].describe),
-              trailing: const Icon(Icons.more_vert),
-              isThreeLine: true,
-            ),
-          );
+          return productCard(products[index]);
         }),
   );
 }
-
