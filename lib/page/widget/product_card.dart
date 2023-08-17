@@ -20,7 +20,13 @@ Widget productCard(product) {
                       textAlign: TextAlign.center,
                     ),
                     // subtitle:
-                    Text(product.describe),
+                    SizedBox(
+                      width:double.infinity,
+                      child: Text(
+                        product.describe,
+                        softWrap: true,
+                      ),
+                    ),
                   ],
                 ),
               ],
