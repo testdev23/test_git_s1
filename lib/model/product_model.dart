@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class Product {
   String name = '';
-  Image? image;
+  Image image = Image.asset('lib/images/box.jpg');
   String describe = '';
   String shortDescribe = '';
 
   Product(
     this.name,
-    this.image,
+    image1,
     this.shortDescribe,
     this.describe,
   ) {
-    image = image ?? Image.asset('lib/images/box.jpg');
+    image = image1 ?? Image.asset('lib/images/box.jpg');
   }
 }

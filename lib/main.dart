@@ -57,7 +57,7 @@ Widget productsList(products) {
           title: Text('List of Products'),
         ),
         itemBuilder: (context, index) {
-          return Center(child: productCard(products[index]));
+          return Center(child: productCard(context, products[index]));
         }),
   );
 }
