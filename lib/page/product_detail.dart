@@ -15,7 +15,7 @@ class ProductDetail extends StatelessWidget {
         child: Column(
           children: [
             Expanded(flex: 25, child: product.image),
-            Expanded(flex: 10, child: Text(product.name)),
+            Expanded(flex: 10, child: Text(product.name, textScaleFactor: 4,textAlign: TextAlign.center,)),
             Expanded(flex: 30, child: Text(product.describe)),
           ],
         ),
