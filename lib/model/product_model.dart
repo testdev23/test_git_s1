@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Product {
   String name = '';
-  Image image = Image.asset('lib/images/box.jpg');
+  Image image = Image.asset('lib/images/box_empty.jpg');
   String describe = '';
   String shortDescribe = '';
 
@@ -12,6 +12,6 @@ class Product {
     this.shortDescribe,
     this.describe,
   ) {
-    image = image1 ?? Image.asset('lib/images/box.jpg');
+    image = image1 ?? Image.asset('lib/images/box_empty.jpg');
   }
 }
