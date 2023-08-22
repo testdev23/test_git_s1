@@ -6,6 +6,7 @@ import '/page/product_detail.dart';
 Widget productCard(BuildContext context, product) {
   return Card(
     clipBehavior: Clip.hardEdge,
+    margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
     child: InkWell(
       splashColor: Colors.blue.withAlpha(30),
       onTap: () {
@@ -18,7 +19,7 @@ Widget productCard(BuildContext context, product) {
           //leading
           Expanded(flex: 25, child: product.image),
           Expanded(
-              flex: 70,
+              flex: 60,
               child: Wrap(
                 clipBehavior: Clip.hardEdge,
                 children: [
@@ -27,6 +28,7 @@ Widget productCard(BuildContext context, product) {
                       Text(
                         product.name,
                         textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       // subtitle:
                       SizedBox(
@@ -34,6 +36,7 @@ Widget productCard(BuildContext context, product) {
                         child: Text(
                           product.describe,
                           softWrap: true,
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ),
                     ],
@@ -42,7 +45,7 @@ Widget productCard(BuildContext context, product) {
               )),
           // trailing:
           const Expanded(
-            flex: 5,
+            flex: 15,
             child: Icon(Icons.more_vert),
           ),
         ],
